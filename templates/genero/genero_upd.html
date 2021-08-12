@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>IGTIFlix</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/principal.css' %}">
+
+</head>
+<body>
+    {% include '../menu.html' %}
+    <main class="container">
+        <div>
+            <form class="form-genero" onsubmit="/genero" id="form-genero" method="POST">{% csrf_token %}
+                <span>{{gen_update}}</span>
+                <input class="submit-button" type="submit" id="submit-button" value="Alterar">
+            </form>
+        </div>
+    </main>
+</body>
+</html>

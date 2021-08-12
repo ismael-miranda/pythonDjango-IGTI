@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>IGTIFlix</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/principal.css' %}">
+
+</head>
+<body>
+    {% include '../menu.html' %}
+    <main class="container">
+        <div>
+            {% if genero_list %}
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Genero</th>
+                            <th>Clique para Alterar</th>
+                            <th>Clique para Excluir</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for genero in genero_list %}
+                            <tr>
+                                <td id="genero-desc">{{ genero.descricao }}</td>
+                                <td>
+                                    <a href="update/{{genero.id}}">
+                                    <button class="list-button editar-button">
+                                        Alterar
+                                    </button>
+                                    </a>
+                                </td>
+                                <td>
+                                    <button class="list-button apagar-button" onclick="erase('{{genero.id}}', '{{genero.descricao}}')">
+                                        Excluir
+                                    </button>
+                                </td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            {% else %}
+                <p>Nenhum genero cadastrado</p>
+            {% endif %}
+        </div>
+        <div>
+            <form class="form-genero" onsubmit="/genero" id="form-genero" method="POST">{% csrf_token %}
+                <span>{{form}}</span>
+                <input class="submit-button" type="submit" id="submit-button" value="Enviar">
+            </form>
+        </div>
+    </main>
+    <script>
+        function erase(id, descricao){
+            txt = "Excluir o genero " + descricao + "?"
+            if (confirm(txt)){
+                location.href = "delete/"+id;
+            }else{
+                location.href = "/genero";
+            }
+        }
+    </script>
+</body>
+</html>

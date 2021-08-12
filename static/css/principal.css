@@ -1,0 +1,107 @@
+*{
+    font-family:Helvetica, sans-serif;
+}
+/*Menu IGTIFLIX*/
+.menu-nav-ul{
+    list-style-type: none;
+    margin:0;
+    padding:0;
+    overflow:hidden;
+    background-color:#20a980;
+}
+.menu-nav-ul li{
+    float:left;
+}
+.menu-nav-ul li a{
+    text-decoration:none;
+    color:#fff;
+    text-align:center;
+    padding:16px;
+    display:block;
+    font-size:1.2em;
+}
+.menu-nav-ul li a:hover{
+    background-color:#21b980;
+}
+
+/* titulo pagina principal */
+.titulo{
+    text-align:center;
+    font-size:80px;
+    padding:50px
+    font-family:Roboto;
+}
+
+/* CRUD css pagina Genero*/
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.form-genero{
+    margin: 30px;
+}
+.form-genero span input{
+    padding:8px;
+}
+.form-genero label{
+    display: inline;
+    text-align:center;
+    font-size: 1.3em;
+    padding: 1em;
+}
+
+.submit-button{
+    font-size: 1.1em;
+    padding: 8px;
+    background-color:#20b980;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.submit-button:hover{
+    color: ;
+    background: #21c970;
+}
+
+table{
+    margin:30px;
+    text-align: center;
+
+}
+thead{
+    background-color:#20b980;
+    font-size: 17px;
+    color: #fff;
+
+
+}
+th,td{
+    border:none;
+    padding:6px;
+}
+
+tbody tr:nth-child(even){
+    background-color: #e8fbe8;
+}
+
+.list-button{
+    background-color: inherit;
+    font-size: 17px;
+    border: none;
+    border-radius: 5px;
+
+}
+
+.editar-button{
+    color: #1b00ff;
+    cursor: pointer;
+}
+.apagar-button{
+    color: #c00c08;
+    cursor: pointer;
+}
+/* FIM CRUD css pagina Genero*/
